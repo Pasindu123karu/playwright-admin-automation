@@ -184,3 +184,27 @@ npx playwright codegen http://weadev.epicbusinessapps.com/admin/login
         * Actions like click(), fill(), expect()
 
     4. You can copy the generated code into your test files
+
+
+## 13. CI/CD Integration (GitHub Actions)
+This project is integrated with GitHub Actions for Continuous Integration.
+
+CI behavior:
+- Tests run automatically on every push or pull request
+- Execution is headless using the Chromium browser
+- Sensitive credentials are stored securely using GitHub Secrets
+- Playwright HTML reports are generated as workflow artifacts
+
+CI execution command used:
+
+```bash
+npx playwright test --project=chromium  
+```
+
+Benefits of CI integration:
+- Automated regression testing
+- Consistent execution across environments
+- Secure credential handling
+- Early detection of failures
+
+---

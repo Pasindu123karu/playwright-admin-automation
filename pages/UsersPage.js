@@ -175,7 +175,7 @@ class UsersPage {
     await this.updateUserButton.click();
   }
 
-  /* ===== FIXED DELETE (ROW-BASED) ===== */
+  /* ===== DELETE (ROW-BASED) ===== */
 
   async deleteFirstUser() {
     this.page.once('dialog', d => d.accept());
