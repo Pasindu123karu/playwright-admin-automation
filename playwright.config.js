@@ -1,24 +1,46 @@
-const { defineConfig } = require('@playwright/test');
+const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
   testDir: './tests',
-  timeout: 30000,
-  retries: process.env.CI ? 2 : 0,
 
-  reporter: 'html',
+  timeout: 60 * 1000,
+
+  expect: {
+    timeout: 5000,
+  },
+
+  fullyParallel: true,
+
+  // CI-specific behavior
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+
+  reporter: [
+    ['html', { open: 'never' }]
+  ],
 
   use: {
     baseURL: 'http://weadev.epicbusinessapps.com',
     headless: true,
     viewport: { width: 1280, height: 720 },
+    actionTimeout: 0,
+    trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    trace: 'on-first-retry'
   },
 
   projects: [
-    { name: 'Chromium', use: { browserName: 'chromium' } },
-    { name: 'Firefox', use: { browserName: 'firefox' } },
-    { name: 'WebKit', use: { browserName: 'webkit' } }
-  ]
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+  ],
 });
