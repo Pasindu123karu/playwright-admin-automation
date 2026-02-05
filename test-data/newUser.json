@@ -1,0 +1,32 @@
+{
+  "email": "auto_user_{{timestamp}}_04@getnada.com",
+  "password": "Kvns@1234",
+  "firstName": "User42",
+  "lastName": "Automation",
+  "nickname": "AutoTest",
+  "phone": "0710257833",
+  "imsId": "000142",
+
+  "dob": {
+    "month": "5",
+    "day": "9"
+  },
+
+  "employment": {
+    "school": "INNOVATION SCHOOL",
+    "schoolSearch": "inn",
+
+    "localAssociation": "NOT APPLICABLE",
+    "localAssociationSearch": "not",
+
+    "workLocation": "RAISBECK AVIATION HIGH SCHOOL",
+    "workLocationSearch": "rais",
+
+    "gradeLevel": "Higher Education",
+
+    "uniservCouncil": "NOT APLLICABLE",
+    "uniservCouncilSearch": "not",
+
+    "position": "Behavior Analyst"
+  }
+}
